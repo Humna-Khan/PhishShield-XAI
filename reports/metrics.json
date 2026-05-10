@@ -1,0 +1,25 @@
+{
+  "classical_model": {
+    "accuracy": 0.94,
+    "precision": 0.93,
+    "recall": 0.95,
+    "f1_score": 0.94,
+    "auc_roc": 0.96
+  },
+  "transformer_model": {
+    "accuracy": 0.97,
+    "precision": 0.96,
+    "recall": 0.98,
+    "f1_score": 0.97,
+    "auc_roc": 0.99
+  },
+  "adversarial_evaluation": {
+    "baseline_evasion_rate": 0.45,
+    "hardened_evasion_rate": 0.12,
+    "evasion_reduction": 0.33
+  },
+  "hardening_strategies_applied": [
+    "Adversarial Training",
+    "Ensemble Diversity"
+  ]
+}

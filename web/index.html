@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhishShield XAI | Adversarial Phishing Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="logo">
+          <span class="icon">🛡️</span>
+          <h1>PhishShield <span>XAI</span></h1>
+        </div>
+        <div class="status-badge" id="api-status">
+          <span class="dot"></span> API Offline
+        </div>
+      </header>
+
+      <main>
+        <section class="input-section">
+          <div class="card glass">
+            <h2>Analyze suspicious email</h2>
+            <p>Paste the full text of the email below to run adversarial analysis with real-time XAI.</p>
+            <textarea id="email-input" placeholder="Paste email content here..."></textarea>
+            <div class="actions">
+              <button id="analyze-btn" class="primary">
+                <span class="btn-text">Run Analysis</span>
+                <span class="loader"></span>
+              </button>
+              <button id="clear-btn" class="secondary">Clear</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-section hidden" id="results">
+          <div class="results-grid">
+            <!-- Classification Result -->
+            <div class="card result-card" id="classification-card">
+              <div class="result-header">
+                <h3>Classification</h3>
+                <span class="badge" id="model-badge">Classical Ensemble</span>
+              </div>
+              <div class="prediction-display">
+                <div class="prediction-value" id="prediction-text">LEGITIMATE</div>
+                <div class="confidence-bar-container">
+                  <div class="confidence-bar" id="confidence-bar"></div>
+                </div>
+                <div class="confidence-text">Confidence: <span id="confidence-score">0%</span></div>
+              </div>
+            </div>
+
+            <!-- XAI: LIME Highlights -->
+            <div class="card xai-card">
+              <h3>LIME Token Highlights</h3>
+              <p class="xai-desc">Visualizing word-level contributions to the prediction.</p>
+              <div class="highlights-container" id="lime-highlights">
+                <!-- Highlights will be injected here -->
+              </div>
+            </div>
+
+            <!-- AI Explanation -->
+            <div class="card ai-explanation-card">
+              <h3>AI Natural Language Explanation</h3>
+              <div class="explanation-content" id="llm-explanation">
+                Analyzing the email structure and semantic intent...
+              </div>
+            </div>
+
+            <!-- SHAP Features -->
+             <div class="card shap-card">
+              <h3>Top Influential Features (SHAP)</h3>
+              <div class="shap-list" id="shap-list">
+                <!-- SHAP items will be injected here -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2026 PhishShield-XAI | Adversarial Phishing Detection Project</p>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
